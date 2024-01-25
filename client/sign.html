@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign</title>
+</head>
+<body>
+    <h1>Sign</h1>
+
+    <label for="signTypeSelection">Select a Sign Type: </label>
+    <select id="signTypeSelection" onchange="signOptions()">
+        <option value="backlit">Backlit</option>
+        <option value="acrylic">Acrylic</option>
+        <option value="windowDecal">Window Decal</option>
+    </select>
+
+    <label for="backlitMaterialSelection">Select Sign Material</label>
+    <select id="backlitMaterialSelection">
+        <!-- Backlit Materials Populate Here -->
+    </select>
+
+    <button type="button" onclick="location.href='home.html'">Home</button>
+    <script src="./index.js"></script>
+</body>
+</html>
