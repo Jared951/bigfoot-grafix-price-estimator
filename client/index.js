@@ -33,3 +33,26 @@ function addOption(selectElement, value, text) {
     option.text = text;
     selectElement.add(option);
 }
+
+function calculateSignPrice() {
+    // Retrieve the value of the width input field and convert it to an integer
+    const signWidth = parseInt(document.getElementById("signWidth").value, 10);
+    // Retrieve the value of the height input field and convert it to an integer   
+    const signHeight = parseInt(document.getElementById("signHeight").value, 10);
+
+    // Check if either signWidth or signHeight is NaN (not a number)
+    if (isNaN(signWidth) || isNaN(signHeight)) {
+        // Display an alert if either width or height is not a valid number
+        alert("Please enter a valid number for the width and height.");
+        // Exit the function if the inputs are invalid
+        return; 
+    }
+
+    // Calculate the area of the sign by multiplying the width and height
+    const signArea = signWidth * signHeight;
+
+    // Display the price in the HTML
+    const signPriceDisplay = document.getElementById("signPriceDisplay");
+    // Access the text content of the signPriceDisplay element and then show the content on the HTML
+    signPriceDisplay.textContent = "Sign Area: " + signArea + " square feet";
+}
