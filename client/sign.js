@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     signOptions();
-})
+});
 
 function signOptions() {
     const signTypeSelection = document.getElementById("signTypeSelection");
@@ -25,14 +25,14 @@ function signOptions() {
         addSignOption(signMaterialSelection, "window_perf_50_50", "Window Perf 50/50: $6.25 per square foot");
         addSignOption(signMaterialSelection, "window_perf_65_35", "Window Perf 65/35: $6.50 per square foot");
     }
-}
+};
 
 function addSignOption(selectElement, value, text) {
     const option = document.createElement("option");
     option.value = value;
     option.text = text;
     selectElement.add(option);
-}
+};
 
 function calculateSignPrice() {
     // Retrieve the value of the width input field and convert it to an integer
@@ -40,7 +40,7 @@ function calculateSignPrice() {
     // Retrieve the value of the height input field and convert it to an integer   
     const signHeight = parseInt(document.getElementById("signHeight").value, 10);
     // Retrieve the value of the selected sign material
-    const selectedMaterial = document.getElementById("signMaterialSelection").value;
+    const selectedSignMaterial = document.getElementById("signMaterialSelection").value;
 
     // Check if either signWidth or signHeight is NaN (not a number)
     if (isNaN(signWidth) || isNaN(signHeight)) {
@@ -48,14 +48,14 @@ function calculateSignPrice() {
         alert("Please enter a valid number for the width and height.");
         // Exit the function if the inputs are invalid
         return; 
-    }
+    };
 
     // Calculate the area of the sign by multiplying the width and height
     const signArea = signWidth * signHeight;
 
     // Retrieve the price per square foot based on the selected material
     let signPricePerSquareFoot; 
-    switch (selectedMaterial) {
+    switch (selectedSignMaterial) {
         case "10.50_per_square_foot":
             signPricePerSquareFoot = 10.50;
             break;
@@ -78,7 +78,7 @@ function calculateSignPrice() {
             // Handle the case where the selected material is not recognized
             alert("Please select a valid sign material.");
             return;
-    }
+    };
 
     // Calculate the total price by multiplying the sign area by the sign price per square foot
     const totalSignPrice = signArea * signPricePerSquareFoot;
@@ -87,4 +87,4 @@ function calculateSignPrice() {
     const signPriceDisplay = document.getElementById("signPriceDisplay");
     // Access the text content of the signPriceDisplay element and then show the content on the HTML
     signPriceDisplay.textContent = "Total Price: $" + totalSignPrice.toFixed(2);
-}
+};
