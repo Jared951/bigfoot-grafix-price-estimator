@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apparel</title>
+</head>
+<body>
+    <label for="apparelTypeSelection">Select Apparel Type: </label>
+    <select name="apparelTypeSelection" onchange="">
+        <option value="tShirt">T-Shirt</option>
+        <option value="longsleeveShirt">Longsleeve Shirt</option>
+        <option value="pullOverHoodie">Pull Over Hoodie</option>
+        <option value="fullZipHoodie">Full Zip Hoodie</option>
+        <option value="crewneck">Crewneck</option>
+        <option value="polo">Polo</option>
+        <option value="baseballHat">Baseball Hat</option>
+    </select>
+
+    <label for="apparelMaterialSelection">Select Apparel Material</label>
+    <select id="apparelMaterialSelection"></select>
+
+    <label for="colorAmount">Select Color Amount</label>
+    <input type="number" id="colorAmount" placeholder="Amount of Colors">
+
+    <label for="apparelUnitAmount">Select Unit Amount</label>
+    <input type="number" id="colorAmount" placeholder="Amount of Units">
+
+    <button onclick="">Get Estimation</button>
+
+    <div id="apparelPriceDisplay"></div>
+    <button type="button" onclick="location.href='home.html'">Home</button>
+</body>
+</html>
