@@ -7,7 +7,7 @@
 </head>
 <body>
     <label for="apparelTypeSelection">Select Apparel Type: </label>
-    <select name="apparelTypeSelection" onchange="">
+    <select name="apparelTypeSelection" onchange="apparelOptions()">
         <option value="tShirt">T-Shirt</option>
         <option value="longsleeveShirt">Longsleeve Shirt</option>
         <option value="pullOverHoodie">Pull Over Hoodie</option>
@@ -24,11 +24,13 @@
     <input type="number" id="colorAmount" placeholder="Amount of Colors">
 
     <label for="apparelUnitAmount">Select Unit Amount</label>
-    <input type="number" id="colorAmount" placeholder="Amount of Units">
+    <input type="number" id="apparelUnitAmount" placeholder="Amount of Units">
 
     <button onclick="">Get Estimation</button>
 
     <div id="apparelPriceDisplay"></div>
+
     <button type="button" onclick="location.href='home.html'">Home</button>
+    <script src="./apparel.js"></script>
 </body>
 </html>
