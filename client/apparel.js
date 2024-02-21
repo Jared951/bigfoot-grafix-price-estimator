@@ -6,9 +6,9 @@ function apparelOptions() {
     const apparelTypeSelection = document.getElementsByName("apparelTypeSelection")[0];
     const apparelMaterialSelection = document.getElementById("apparelMaterialSelection");
     
-    const selectedApparelType = apparelTypeSelection.value;
-
     apparelMaterialSelection.innerHTML = "<option value='non'>Select</option>";
+    
+    const selectedApparelType = apparelTypeSelection.value;
 
     if (selectedApparelType === "tShirt") {
         addApparelOption(apparelMaterialSelection, "hanes_5280_adult_essential_short_sleeve_tshirt", "Hanes 5280 Adult Essential Short T-Shirt: $2.07");
@@ -45,4 +45,94 @@ function addApparelOption(selectElement, value, text) {
     option.value = value;
     option.textContent = text;
     selectElement.appendChild(option);
+};
+
+function calculateApparelPrice() {
+    const quantity = parseInt(document.getElementById("quantity").value);
+    const selectedApparelType = document.getElementById("apparelMaterialSelection").value;
+
+    if (isNaN(quantity)) {
+        alert("Please enter a quantity");
+        return;
+    };
+
+    let apparelPricePerQuantity;
+    switch (selectedApparelType) {
+        // tshirts
+        case "hanes_5280_adult_essential_short_sleeve_tshirt":
+            apparelPricePerQuantity = 2.07;
+            break;
+        case "gildan_g500_adult_heavy_cotton_tshirt":
+            apparelPricePerQuantity = 2.52;
+            break;
+        case "comfort_colors_c1717_adult_heavyweight_tshirt":
+            apparelPricePerQuantity = 6.62;
+            break;
+        // longsleeve
+        case "comfort_colors_C6014_adult_heavyweight_rs_longsleeve":
+            apparelPricePerQuantity = 13.91;
+            break;
+        case "gildan_g840_adult_50/50_longsleeve":
+            apparelPricePerQuantity = 5.56;
+            break;
+        case "gildan_g540_adult_heavy_cotton_longsleeve":
+            apparelPricePerQuantity = 4.23;
+            break;
+        // pullover hoodie
+        case "gildan_g185_adult_heavy_blend_pullover_hoodie":
+            apparelPricePerQuantity = 10.94;
+            break;
+        case "champion_s700_adult_pullover_hoodie":
+            apparelPricePerQuantity = 13.85;
+            break;
+        case "hanes_f170_ultimate_cotton_pullover_hoodie":
+            apparelPricePerQuantity = 18.64;
+            break;
+        // fullzip hoodies
+        case "champion_s800_fullzip_hoodie":
+            apparelPricePerQuantity = 18.66;
+            break;
+        case "port_and_company_pc850zh_fullzip_hoodie":
+            apparelPricePerQuantity = 19.15;
+            break;
+        case "bella_and_canvas_3739_fullzip_hoodie":
+            apparelPricePerQuantity = 22.65;
+            break;
+        // crewneck
+        case "jerzees_562_adult_nublend_crewneck":
+            apparelPricePerQuantity = 6.57;
+            break;
+        case "gildan_g180_adult_heavy_blend_crewneck":
+            apparelPricePerQuantity = 6.40;
+            break;
+        case "hanes_p1607_ecosmart_crewneck":
+            apparelPricePerQuantity = 4.71;
+            break;
+        // polo
+        case "hanes_054_ecosmart_polo":
+            apparelPricePerQuantity = 3.81;
+            break;
+        case "gildan_g880_dryblend_polo":
+            apparelPricePerQuantity = 7.55;
+            break;
+        case "sport_tek_st550_posicharge_polo":
+            apparelPricePerQuantity = 10.38;
+            break;
+        // hat
+        case "port_and_company_cp80_six_panel_twill_cap":
+            apparelPricePerQuantity = 4.30;
+            break;
+        case "sport_tek_stc39_retro_trucker_cap":
+            apparelPricePerQuantity = 6.86;
+            break;
+        default:
+            alert("Please select an apparel type");
+            return;
+    };
+
+    const totalApparelPrice = quantity * apparelPricePerQuantity;
+
+    const apparelPriceDisplay = document.getElementById("apparelPriceDisplay");
+
+    apparelPriceDisplay.textContent = "Total Price: $" + totalApparelPrice.toFixed(2);
 };

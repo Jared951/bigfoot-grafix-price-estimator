@@ -8,7 +8,6 @@ function bannerOptions() {
     document.getElementById("bannerWidth").value = "";
     document.getElementById("bannerHeight").value = "";
 
-
     bannerMaterialSelection.innerHTML = "<option value='non'>Select</option>";
 
     const selectedBannerMaterialType = bannerTypeSelection.value;
@@ -39,7 +38,7 @@ function calculateBannerPrice() {
         return; 
     };
 
-    const bannerArea = bannerWidth * bannerHeight
+    const bannerArea = bannerWidth * bannerHeight;
 
     let bannerPricePerSquareFoot;
     switch (selectedBannerMaterial) {
