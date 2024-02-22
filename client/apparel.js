@@ -5,8 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
 function apparelOptions() {
     const apparelTypeSelection = document.getElementsByName("apparelTypeSelection")[0];
     const apparelMaterialSelection = document.getElementById("apparelMaterialSelection");
+    const apparelPriceDisplay = document.getElementById("apparelPriceDisplay")
     
     apparelMaterialSelection.innerHTML = "<option value='non'>Select</option>";
+    apparelPriceDisplay.textContent = "";
     
     const selectedApparelType = apparelTypeSelection.value;
 

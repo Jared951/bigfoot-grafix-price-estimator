@@ -5,10 +5,12 @@ document.addEventListener("DOMContentLoaded", function () {
 function bannerOptions() {
     const bannerTypeSelection = document.getElementsByName("bannerTypeSelection")[0];
     const bannerMaterialSelection = document.getElementById("bannerMaterialSelection");
+    const bannerPriceDisplay = document.getElementById("bannerPriceDisplay");
     document.getElementById("bannerWidth").value = "";
     document.getElementById("bannerHeight").value = "";
 
     bannerMaterialSelection.innerHTML = "<option value='non'>Select</option>";
+    bannerPriceDisplay.textContent = "";
 
     const selectedBannerMaterialType = bannerTypeSelection.value;
 

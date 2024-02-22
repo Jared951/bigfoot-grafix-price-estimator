@@ -5,11 +5,14 @@ document.addEventListener("DOMContentLoaded", function () {
 function signOptions() {
     const signTypeSelection = document.getElementById("signTypeSelection");
     const signMaterialSelection = document.getElementById("signMaterialSelection");
+    const signPriceDisplay = document.getElementById("signPriceDisplay");
+
     document.getElementById("signWidth").value = "";
     document.getElementById("signHeight").value = "";
 
     // Clear existing options
     signMaterialSelection.innerHTML = "<option value='non'>Select</option>";
+    signPriceDisplay.textContent = "";
 
     // Get selected Sign Material Type
     const selectedSignMaterialType = signTypeSelection.value;
