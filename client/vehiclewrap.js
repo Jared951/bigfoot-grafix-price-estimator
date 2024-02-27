@@ -1,76 +1,67 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const carMakeSearchInput = document.getElementById("carMakeSearch");
-    const searchButton = document.getElementById("searchButton");
+    const carMakeDropdown = document.getElementById("carMakeDropdown");
 
-    carMakeSearchInput.addEventListener("input", function() {
-        handleCarMakeSearch(carMakeSearchInput.value.trim().toLowerCase());
-    });
-
-    searchButton.addEventListener("click", function() {
-        const selectedCarMake = carMakeSearchInput.value.trim().toLowerCase();
-        if (carMakes.includes(selectedCarMake)) {
-            alert("Selected car make: " + selectedCarMake);
-        } else {
-            alert("Car make not found: " + selectedCarMake);
-        }
+    // Loop through the carMakes array and create an option element for each car make
+    carMakes.forEach(function(carMake) {
+        const option = document.createElement("option");
+        option.value = carMake.toLowerCase(); // Set the value to lowercase for consistency
+        option.textContent = carMake; // Set the text content to display the car make
+        carMakeDropdown.appendChild(option); // Append the option to the dropdown
     });
 });
 
 const carMakes = [
-    "acura", 
-    "audi", 
-    "austin", 
-    "bmw", 
-    "buick", 
-    "cadillac", 
-    "chevrolet", 
-    "chrysler", 
-    "daewoo", 
-    "dodge", 
-    "fiat", 
-    "ford", 
-    "freightliner", 
-    "geo", 
-    "gm", 
-    "gmc", 
-    "hino", 
-    "honda", 
-    "humv", 
-    "hyundai", 
-    "infiniti", 
-    "international", 
-    "isuzu", 
-    "jaguar", 
-    "jeep", 
-    "kenworth", 
-    "kia", 
-    "land rover", 
-    "lexus", 
-    "lincoln", 
-    "mack", 
-    "mazda", 
-    "mercedes", 
-    "mercury", 
-    "mini", 
-    "mitsubishi", 
-    "nissan", 
-    "oldsmobile", 
-    "peterbilt", 
-    "plymouth", 
-    "pontiac", 
-    "saab", 
-    "saturn", 
-    "scion", 
-    "smart", 
-    "sterling", 
-    "subaru", 
-    "suzuki", 
-    "tesla", 
-    "toyota", 
-    "volkswagen", 
-    "volvo", 
-    "western star"
+    "Acura", 
+    "Audi", 
+    "Austin", 
+    "BMW", 
+    "Buick", 
+    "Cadillac", 
+    "Chevrolet", 
+    "Chrysler", 
+    "Daewoo", 
+    "Dodge", 
+    "Fiat", 
+    "Ford", 
+    "Freightliner", 
+    "Geo", 
+    "GM", 
+    "GMC", 
+    "Hino", 
+    "Honda", 
+    "HUMV", 
+    "Hyundai", 
+    "Infiniti", 
+    "International", 
+    "Isuzu", 
+    "Jaguar", 
+    "Jeep", 
+    "Kenworth", 
+    "Kia", 
+    "Land Rover", 
+    "Lexus", 
+    "Lincoln", 
+    "Mack", 
+    "Mazda", 
+    "Mercedes", 
+    "Mercury", 
+    "Mini", 
+    "Mitsubishi", 
+    "Nissan", 
+    "Oldsmobile", 
+    "Peterbilt", 
+    "Plymouth", 
+    "Pontiac", 
+    "Saab", 
+    "Saturn", 
+    "Scion", 
+    "Smart", 
+    "Sterling", 
+    "Subaru", 
+    "Suzuki", 
+    "Tesla", 
+    "Toyota", 
+    "Volkswagen", 
+    "Volvo", 
+    "Western Star"
 ];
-
-function handleCarMakeSearch(searchTerm) {
-}
