@@ -1,15 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
     carMakeOptions();
+    populateCarWrapMaterials();
 });
 
 function carMakeOptions() {
     const carMakeSelection = document.getElementsByName("carMakeSelection")[0];
     const carModelSelection = document.getElementById("carModelSelection");
+    const carWrapMaterialSelection = document.getElementById("carWrapMaterialSelection");
 
     // Clear existing options
     carModelSelection.innerHTML = "<option value='non'>Select</option>";
 
     const selectedCarMake = carMakeSelection.value;
+
+    populateCarWrapMaterials()
 
     if (selectedCarMake === "acura") {
         addCarModelOption(carModelSelection, "csx4DoorSedan2006-2011", "CSX 4 Door Sedan (2006-2011)");
@@ -48,11 +52,34 @@ function carMakeOptions() {
         addCarModelOption(carModelSelection, "z3Coupe1999-2002", "Z3 Coupe (1999-2002)");
         addCarModelOption(carModelSelection, "z4Roadster2003-2004", "Z4 Roadster (2003-2004)");
     }
-}
+};
 
 function addCarModelOption(selectElement, value, text) {
     const option = document.createElement("option");
     option.value = value;
     option.textContent = text;
     selectElement.appendChild(option);
-}
+};
+
+function populateCarWrapMaterials() {
+    const carWrapMaterialSelection = document.getElementById("carWrapMaterialSelection");
+
+    // Clear exisisting options
+    carWrapMaterialSelection.innerHTML = "";
+
+    const carWrapMaterials = {
+        "Select": "",
+        "Chrome": 8.00, 
+        "Carbon Fiber": 5.00,
+        "Vinyl Gloss": 2.50,
+        "Vinyl Matte": 3.00
+    };
+
+    // Populate car wrap materials dropdown
+    for (const material in carWrapMaterials) {
+        const option = document.createElement("option");
+        option.value = material;
+        option.textContent = material === "Select" ? "Select" : `${material} - $${carWrapMaterials[material]} per square foot`;
+        carWrapMaterialSelection.appendChild(option);
+    };
+};
