@@ -10,6 +10,7 @@
 
     <label for="carMakeSelection">Select Car Make: </label>
     <select name="carMakeSelection" onchange="carMakeOptions()">
+        <option value="select">Select</option>
         <option value="acura">Acura</option>
         <option value="audi">Audi</option>
         <option value="austin">Austin</option>
@@ -70,6 +71,14 @@
 
     <label for="carWrapMaterialSelection">Select Car Wrap Material: </label>
     <select id="carWrapMaterialSelection"></select>
+
+    <label for="wrapSizeSelection">Select Wrap Size: </label>
+    <select name="wrapSizeSelection" id="wrapSizeSelection">
+        <option value="select">Select</option>
+        <option value="full" id="full">Full</option>
+        <option value="partial" id="partial">Partial</option>
+        <option value="custom" id="custom">Custom</option>
+    </select>
 
     <button type="button" onclick="location.href='home.html'">Home</button>
     <script src="./vehiclewrap.js"></script>

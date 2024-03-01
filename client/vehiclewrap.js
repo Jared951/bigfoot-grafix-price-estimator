@@ -6,10 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
 function carMakeOptions() {
     const carMakeSelection = document.getElementsByName("carMakeSelection")[0];
     const carModelSelection = document.getElementById("carModelSelection");
-    const carWrapMaterialSelection = document.getElementById("carWrapMaterialSelection");
+    const wrapSizeSelection = document.getElementById("wrapSizeSelection");
 
     // Clear existing options
     carModelSelection.innerHTML = "<option value='non'>Select</option>";
+    wrapSizeSelection.value = "select"; // Reset wrap size selection
 
     const selectedCarMake = carMakeSelection.value;
 
