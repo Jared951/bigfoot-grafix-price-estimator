@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     carMakeOptions();
     populateCarWrapMaterials();
+
+    const estimateButton = document.getElementById("estimateButton");
+    estimateButton.addEventListener("click", calculateEstimate);
 });
 
 function carMakeOptions() {
@@ -83,4 +86,32 @@ function populateCarWrapMaterials() {
         option.textContent = material === "Select" ? "Select" : `${material} - $${carWrapMaterials[material]} per square foot`;
         carWrapMaterialSelection.appendChild(option);
     };
+};
+
+function calculateEstimate() {
+    const carWrapMaterialSelection = document.getElementById("carWrapMaterialSelection");
+    const selectedMaterial = carWrapMaterialSelection.value;
+
+    const carModelSelection = document.getElementById("carModelSelection");
+    const selectedCarModel = carModelSelection.value;
+
+    let squareFootage = 0;
+    if (selectedCarModel === "csx4DoorSedan2006-2011") {
+        squareFootage = 201.7
+    } 
+    // add remaining car models/sq footage here with else if
+
+    const carWrapMaterials = {
+        "Chrome": 8.00,
+        "Carbon Fiber": 5.00,
+        "Vinyl Gloss": 2.50,
+        "Vinyl Matte": 3.00
+    };
+
+    const pricePerSquareFoot = carWrapMaterials[selectedMaterial];
+
+    const estimate = squareFootage * pricePerSquareFoot;
+
+    const estimateDisplay = document.getElementById("fullEstimateDisplay");
+    estimateDisplay.innerHTML = `<p>Estimated Full Wrap Price: $${estimate.toFixed(2)}</p>`;
 };
