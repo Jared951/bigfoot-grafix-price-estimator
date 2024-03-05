@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const estimateButton = document.getElementById("estimateButton");
     estimateButton.addEventListener("click", calculateEstimate);
+
+    const wrapSizeSelection = document.getElementById("wrapSizeSelection");
+    wrapSizeSelection.addEventListener("change", handleWrapSizeChange);
 });
 
 function carMakeOptions() {
@@ -114,4 +117,25 @@ function calculateEstimate() {
 
     const estimateDisplay = document.getElementById("fullEstimateDisplay");
     estimateDisplay.innerHTML = `<p>Estimated Full Wrap Price: $${estimate.toFixed(2)}</p>`;
+};
+
+function handleWrapSizeChange() {
+    const wrapSizeSelection = document.getElementById("wrapSizeSelection");
+    const selectedWrapSize = wrapSizeSelection.value;
+
+    if (selectedWrapSize === "partial") {
+        showPartialOptions();
+    } else {
+        hidePartialOptions();
+    }
+};
+
+function showPartialOptions() {
+    const partialOptionsDiv = document.getElementById("partialOptions");
+    partialOptionsDiv.style.display = "block";
+};
+
+function hidePartialOptions() {
+    const partialOptionsDiv = document.getElementById("partialOptions");
+    partialOptionsDiv.style.display = "none";
 };
