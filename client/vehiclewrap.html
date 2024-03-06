@@ -92,15 +92,17 @@
     
     <div id="customOptions" style="display: none;">
         <label for="customWidth">Width (in feet): </label>
-        <input type="number" id="customWidth" name="customWidth" step="1">
+        <input type="number" id="customWidth" name="customWidth" step="1" min="0">
         <br>
         <label for="customHeight">Height (in feet): </label>
-        <input type="number" id="customHeight" name="customHeight" step="1">
-    </div>    
+        <input type="number" id="customHeight" name="customHeight" step="1" min="0">
+    </div>       
 
     <button id="estimateButton">Get Estimation</button>
 
     <div id="fullEstimateDisplay"></div>
+
+    <!-- <p>Note: Measurements include 6 inch bleed</p> -->
 
     <button type="button" onclick="location.href='home.html'">Home</button>
     <script src="./vehiclewrap.js"></script>

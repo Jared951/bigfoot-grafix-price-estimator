@@ -91,18 +91,87 @@ function populateCarWrapMaterials() {
     };
 };
 
+function handleWrapSizeChange() {
+    const wrapSizeSelection = document.getElementById("wrapSizeSelection");
+    const selectedWrapSize = wrapSizeSelection.value;
+
+    if (selectedWrapSize === "partial") {
+        showPartialOptions();
+        hideCustomOptions();
+    } else if (selectedWrapSize === "custom") {
+        showCustomOptions();
+        hidePartialOptions();
+    } else {
+        hidePartialOptions();
+        hideCustomOptions();
+    }
+};
+
+function showPartialOptions() {
+    const partialOptionsDiv = document.getElementById("partialOptions");
+    partialOptionsDiv.style.display = "block"; // change how it is styled
+};
+
+function hidePartialOptions() {
+    const partialOptionsDiv = document.getElementById("partialOptions");
+    partialOptionsDiv.style.display = "none";
+};
+
+function showCustomOptions() {
+    const customOptionsDiv = document.getElementById("customOptions");
+    customOptionsDiv.style.display = "block"; // change how it is styled
+
+};
+
+function hideCustomOptions() {
+    const customOptionsDiv = document.getElementById("customOptions");
+    customOptionsDiv.style.display = "none";
+};
+
 function calculateEstimate() {
     const carWrapMaterialSelection = document.getElementById("carWrapMaterialSelection");
     const selectedMaterial = carWrapMaterialSelection.value;
 
-    const carModelSelection = document.getElementById("carModelSelection");
-    const selectedCarModel = carModelSelection.value;
+    const wrapSizeSelection = document.getElementById("wrapSizeSelection");
+    const selectedWrapSize = wrapSizeSelection.value;
 
     let squareFootage = 0;
-    if (selectedCarModel === "csx4DoorSedan2006-2011") {
-        squareFootage = 201.7
-    } 
-    // add remaining car models/sq footage here with else if
+    
+    if (selectedWrapSize === "full"){
+        const carModelSelection = document.getElementById("carModelSelection");
+        const selectedCarModel = carModelSelection.value; 
+
+        if (selectedCarModel === "csx4DoorSedan2006-2011") {
+            squareFootage = 201.7
+        } // add remaining car models here with else if
+
+    } else if (selectedWrapSize === "partial") {
+        const carModelSelection = document.getElementById("carModelSelection");
+        const selectedCarModel = carModelSelection.value; 
+
+        if (selectedCarModel === "csx4DoorSedan2006-2011") {
+            const partialSelection = document.getElementById("partialSelection");
+            const selectedPartial = partialSelection.value;
+
+            if (selectedPartial === "side") {
+                squareFootage = 68;
+            } else if (selectedPartial === "back") {
+                squareFootage = 24.3;
+            } else if (selectedPartial === "hood") {
+                squareFootage = 13.8;
+            } else if (selectedPartial === "roof") {
+                squareFootage = 27.6;
+            }
+        } else {
+            alert("Partial wrap option is only available for CSX 4 Door Sedan (2006-2011). Please select a different option.");
+        } // add remaining car models with the sqft per partial here
+
+    } else if (selectedWrapSize === "custom") {
+        const widthInput = document.getElementById("customWidth").value;
+        const heightInput = document.getElementById("customHeight").value;
+
+        squareFootage = widthInput * heightInput
+    };
 
     const carWrapMaterials = {
         "Chrome": 8.00,
@@ -117,25 +186,4 @@ function calculateEstimate() {
 
     const estimateDisplay = document.getElementById("fullEstimateDisplay");
     estimateDisplay.innerHTML = `<p>Estimated Full Wrap Price: $${estimate.toFixed(2)}</p>`;
-};
-
-function handleWrapSizeChange() {
-    const wrapSizeSelection = document.getElementById("wrapSizeSelection");
-    const selectedWrapSize = wrapSizeSelection.value;
-
-    if (selectedWrapSize === "partial") {
-        showPartialOptions();
-    } else {
-        hidePartialOptions();
-    }
-};
-
-function showPartialOptions() {
-    const partialOptionsDiv = document.getElementById("partialOptions");
-    partialOptionsDiv.style.display = "block";
-};
-
-function hidePartialOptions() {
-    const partialOptionsDiv = document.getElementById("partialOptions");
-    partialOptionsDiv.style.display = "none";
 };
