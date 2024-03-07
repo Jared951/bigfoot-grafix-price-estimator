@@ -95,6 +95,8 @@ function handleWrapSizeChange() {
     const wrapSizeSelection = document.getElementById("wrapSizeSelection");
     const selectedWrapSize = wrapSizeSelection.value;
 
+    clearEstimationDisplay();
+
     if (selectedWrapSize === "partial") {
         showPartialOptions();
         hideCustomOptions();
@@ -186,4 +188,9 @@ function calculateEstimate() {
 
     const estimateDisplay = document.getElementById("fullEstimateDisplay");
     estimateDisplay.innerHTML = `<p>Estimated Full Wrap Price: $${estimate.toFixed(2)}</p>`;
+};
+
+function clearEstimationDisplay() {
+    const estimateDisplay = document.getElementById("fullEstimateDisplay");
+    estimateDisplay.innerHTML = "";
 };
