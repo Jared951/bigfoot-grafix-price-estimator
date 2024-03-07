@@ -7,16 +7,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const wrapSizeSelection = document.getElementById("wrapSizeSelection");
     wrapSizeSelection.addEventListener("change", handleWrapSizeChange);
+
+    const carModelSelection = document.getElementById("carModelSelection");
+    carModelSelection.addEventListener("change", handleCarModelChange);
 });
 
 function carMakeOptions() {
     const carMakeSelection = document.getElementsByName("carMakeSelection")[0];
     const carModelSelection = document.getElementById("carModelSelection");
+    const carWrapMaterialSelection = document.getElementById("carWrapMaterialSelection");
     const wrapSizeSelection = document.getElementById("wrapSizeSelection");
+    const estimateDisplay = document.getElementById("fullEstimateDisplay");
 
     // Clear existing options
     carModelSelection.innerHTML = "<option value='non'>Select</option>";
+    carWrapMaterialSelection.innerHTML = "<option value='Select'>Select</option>";
     wrapSizeSelection.value = "select"; // Reset wrap size selection
+    estimateDisplay.innerHTML = ""; // Clear estimation display
 
     const selectedCarMake = carMakeSelection.value;
 
@@ -68,10 +75,25 @@ function addCarModelOption(selectElement, value, text) {
     selectElement.appendChild(option);
 };
 
+// Changes to car model reset wrap size and estimate display
+function handleCarModelChange() {
+    const wrapSizeSelection = document.getElementById("wrapSizeSelection");
+    const estimateDisplay = document.getElementById("fullEstimateDisplay");
+
+    // Reset wrap size selection
+    wrapSizeSelection.value = "select";
+
+    hidePartialOptions();
+
+    hideCustomOptions();
+
+    // Clear estimation display
+    estimateDisplay.innerHTML = "";
+}
+
 function populateCarWrapMaterials() {
     const carWrapMaterialSelection = document.getElementById("carWrapMaterialSelection");
 
-    // Clear exisisting options
     carWrapMaterialSelection.innerHTML = "";
 
     const carWrapMaterials = {
