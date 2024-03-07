@@ -10,6 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const carModelSelection = document.getElementById("carModelSelection");
     carModelSelection.addEventListener("change", handleCarModelChange);
+
+    const carMakeSelection = document.getElementsByName("carMakeSelection")[0];
+    carMakeSelection.addEventListener("change", handleCarMakeChange);
+
+    const carWrapMaterialSelection = document.getElementById("carWrapMaterialSelection");
+    carWrapMaterialSelection.addEventListener("change", handleCarWrapMaterialChange);
 });
 
 function carMakeOptions() {
@@ -86,6 +92,8 @@ function handleCarModelChange() {
     hidePartialOptions();
 
     hideCustomOptions();
+
+    clearCustomOptions();
 
     // Clear estimation display
     estimateDisplay.innerHTML = "";
@@ -215,4 +223,22 @@ function calculateEstimate() {
 function clearEstimationDisplay() {
     const estimateDisplay = document.getElementById("fullEstimateDisplay");
     estimateDisplay.innerHTML = "";
+};
+
+function handleCarMakeChange() {
+    clearCustomOptions();
+    hidePartialOptions();
+    hideCustomOptions();
+};
+
+function handleCarWrapMaterialChange() {
+    clearCustomOptions();
+};
+
+function clearCustomOptions() {
+    const customWidthInput = document.getElementById("customWidth");
+    const customHeightInput = document.getElementById("customHeight");
+
+    customWidthInput.value = "";
+    customHeightInput.value = "";
 };
