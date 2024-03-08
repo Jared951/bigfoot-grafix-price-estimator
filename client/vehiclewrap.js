@@ -300,6 +300,7 @@ function calculateEstimate() {
         const carModelSelection = document.getElementById("carModelSelection");
         const selectedCarModel = carModelSelection.value; 
 
+        // Acura
         if (selectedCarModel === "csx4DoorSedan2006-2011") {
             const partialSelection = document.getElementById("partialSelection");
             const selectedPartial = partialSelection.value;
@@ -313,9 +314,152 @@ function calculateEstimate() {
             } else if (selectedPartial === "roof") {
                 squareFootage = 27.6;
             }
-        } else {
-            alert("Partial wrap option is only available for CSX 4 Door Sedan (2006-2011). Please select a different option.");
-        } // add remaining car models with the sqft per partial here
+        } else if (selectedCarModel === "elSeries4Door2001-2002") {
+            const partialSelection = document.getElementById("partialSelection");
+            const selectedPartial = partialSelection.value;
+
+            if (selectedPartial === "side") {
+                squareFootage = 68;
+            } else if (selectedPartial === "back") {
+                squareFootage = 26.1;
+            } else if (selectedPartial === "hood") {
+                squareFootage = 17.9;
+            } else if (selectedPartial === "roof") {
+                squareFootage = 22.8;
+            }
+        } else if (selectedCarModel === "integra3Door1989-1993") {
+            const partialSelection = document.getElementById("partialSelection");
+            const selectedPartial = partialSelection.value;
+
+            if (selectedPartial === "side") {
+                squareFootage = 61.7;
+            } else if (selectedPartial === "back") {
+                squareFootage = 23.9;
+            } else if (selectedPartial === "hood") {
+                squareFootage = 22.1;
+            } else if (selectedPartial === "roof") {
+                squareFootage = 20;
+            }
+        } else if (selectedCarModel === "integra3Door2000-2002") {
+            const partialSelection = document.getElementById("partialSelection");
+            const selectedPartial = partialSelection.value;
+
+            if (selectedPartial === "side") {
+                squareFootage = 60.8;
+            } else if (selectedPartial === "back") {
+                squareFootage = 23.5;
+            } else if (selectedPartial === "hood") {
+                squareFootage = 22.1;
+            } else if (selectedPartial === "roof") {
+                squareFootage = 15;
+            }
+        } else if (selectedCarModel === "integra5Door1989-1993") {
+            const partialSelection = document.getElementById("partialSelection");
+            const selectedPartial = partialSelection.value;
+
+            if (selectedPartial === "side") {
+                squareFootage = 68.5;
+            } else if (selectedPartial === "back") {
+                squareFootage = 24.5;
+            } else if (selectedPartial === "hood") {
+                squareFootage = 23;
+            } else if (selectedPartial === "roof") {
+                squareFootage = 22.2;
+            }
+        } else if (selectedCarModel === "intergra4DoorSedan1994-2002") {
+            const partialSelection = document.getElementById("partialSelection");
+            const selectedPartial = partialSelection.value;
+
+            if (selectedPartial === "side") {
+                squareFootage = 67;
+            } else if (selectedPartial === "back") {
+                squareFootage = 24.9;
+            } else if (selectedPartial === "hood") {
+                squareFootage = 21.5;
+            } else if (selectedPartial === "roof") {
+                squareFootage = 19.2;
+            }
+        } else if (selectedCarModel === "mdx2000-2006") {
+            const partialSelection = document.getElementById("partialSelection");
+            const selectedPartial = partialSelection.value;
+
+            if (selectedPartial === "side") {
+                squareFootage = 82.3;
+            } else if (selectedPartial === "back") {
+                squareFootage = 30.1;
+            } else if (selectedPartial === "hood") {
+                squareFootage = 18.3;
+            } else if (selectedPartial === "roof") {
+                squareFootage = 34.1;
+            }
+        } else if (selectedCarModel === "mdx2007-2012") {
+            const partialSelection = document.getElementById("partialSelection");
+            const selectedPartial = partialSelection.value;
+
+            if (selectedPartial === "side") {
+                squareFootage = 77.8;
+            } else if (selectedPartial === "back") {
+                squareFootage = 31.7;
+            } else if (selectedPartial === "hood") {
+                squareFootage = 19.7;
+            } else if (selectedPartial === "roof") {
+                squareFootage = 40;
+            }
+        } else if (selectedCarModel === "rdx2007-2012") {
+            const partialSelection = document.getElementById("partialSelection");
+            const selectedPartial = partialSelection.value;
+
+            if (selectedPartial === "side") {
+                squareFootage = 75.8;
+            } else if (selectedPartial === "back") {
+                squareFootage = 28.8;
+            } else if (selectedPartial === "hood") {
+                squareFootage = 19.6;
+            } else if (selectedPartial === "roof") {
+                squareFootage = 37.3;
+            }
+        } else if (selectedCarModel === "rsxCoupe2001-2006") {
+            const partialSelection = document.getElementById("partialSelection");
+            const selectedPartial = partialSelection.value;
+
+            if (selectedPartial === "side") {
+                squareFootage = 65.8;
+            } else if (selectedPartial === "back") {
+                squareFootage = 22.7;
+            } else if (selectedPartial === "hood") {
+                squareFootage = 19.1;
+            } else if (selectedPartial === "roof") {
+                squareFootage = 13.7;
+            }
+        } else if (selectedCarModel === "tlx2015-2020") {
+            const partialSelection = document.getElementById("partialSelection");
+            const selectedPartial = partialSelection.value;
+
+            if (selectedPartial === "side") {
+                squareFootage = 76.6;
+            } else if (selectedPartial === "back") {
+                squareFootage = 27.3;
+            } else if (selectedPartial === "hood") {
+                squareFootage = 28.6;
+            } else if (selectedPartial === "roof") {
+                squareFootage = 29.5;
+            }
+        } else if (selectedCarModel === "mdx2014-2020") {
+            const partialSelection = document.getElementById("partialSelection");
+            const selectedPartial = partialSelection.value;
+
+            if (selectedPartial === "side") {
+                squareFootage = 76.4;
+            } else if (selectedPartial === "back") {
+                squareFootage = 29.9;
+            } else if (selectedPartial === "hood") {
+                squareFootage = 23.8;
+            } else if (selectedPartial === "roof") {
+                squareFootage = 42.5;
+            } 
+        // Audi 
+        }
+
 
     } else if (selectedWrapSize === "custom") {
         const widthInput = document.getElementById("customWidth").value;
