@@ -192,9 +192,109 @@ function calculateEstimate() {
         const carModelSelection = document.getElementById("carModelSelection");
         const selectedCarModel = carModelSelection.value; 
 
+        // Acura
         if (selectedCarModel === "csx4DoorSedan2006-2011") {
-            squareFootage = 201.7
-        } // add remaining car models here with else if
+            squareFootage = 201.7;
+        } else if (selectedCarModel === "elSeries4Door2001-2002") {
+            squareFootage = 202.7;
+        } else if (selectedCarModel === "integra3Door1989-1993") {
+            squareFootage = 189.3;
+        } else if (selectedCarModel === "integra3Door2000-2002") {
+            squareFootage = 182.3;
+        } else if (selectedCarModel === "integra5Door1989-1993") {
+            squareFootage = 206.8;
+        } else if (selectedCarModel === "intergra4DoorSedan1994-2002") {
+            squareFootage = 199.5;
+        } else if (selectedCarModel === "mdx2000-2006") {
+            squareFootage = 247.1;
+        } else if (selectedCarModel === "mdx2007-2012") {
+            squareFootage = 247.1;
+        } else if (selectedCarModel === "rdx2007-2012") {
+            squareFootage = 237.3;
+        } else if (selectedCarModel === "rsxCoupe2001-2006") {
+            squareFootage = 187;
+        } else if (selectedCarModel === "tlx2015-2020") {
+            squareFootage = 238.7;
+        } else if (selectedCarModel === "mdx2014-2020") {
+            squareFootage = 248.9;
+        // Audi
+        } else if (selectedCarModel === "a3Wagon2006-2008") {
+            squareFootage = 199.2;
+        } else if (selectedCarModel === "a42001-2005") {
+            squareFootage = 203.3;
+        } else if (selectedCarModel === "a4Allroads2000-2006") {
+            squareFootage = 189.7;
+        } else if (selectedCarModel === "a4AvantWagon2002-2008") {
+            squareFootage = 196.4;
+        } else if (selectedCarModel === "q72007-2008") {
+            squareFootage = 276.2;
+        } else if (selectedCarModel === "ttCoupe2000-2006") {
+            squareFootage = 186.1;
+        } else if (selectedCarModel === "ttCoupe2007-2014") {
+            squareFootage = 189.1;
+        // Austin
+        } else if (selectedCarModel === "austin_minicooper") {
+            squareFootage = 144;
+        // BMW
+        } else if (selectedCarModel === "3Series2005-2011") {
+            squareFootage = 208.2;
+        } else if (selectedCarModel === "3SeriesCoupe2001-2005") {
+            squareFootage = 202.5;
+        } else if (selectedCarModel === "3SeriesSaloon2001-2005") {
+            squareFootage = 212.2;
+        } else if (selectedCarModel === "i32014-2020") {
+            squareFootage = 220.4;
+        } else if (selectedCarModel === "miniCooper2002-2007") {
+            squareFootage = 163.9;
+        } else if (selectedCarModel === "miniCooperConvertible2002-2007") {
+            squareFootage = 138.2;
+        } else if (selectedCarModel === "miniCooperS2002-2007") {
+            squareFootage = 163.9;
+        } else if (selectedCarModel === "x32003-2010") {
+            squareFootage = 215.1;
+        } else if (selectedCarModel === "x52000-2008") {
+            squareFootage = 222.9;
+        } else if (selectedCarModel === "z3Convertible1999-2002") {
+            squareFootage = 133.3;
+        } else if (selectedCarModel === "z3Coupe1999-2002") {
+            squareFootage = 154.5;
+        } else if (selectedCarModel === "z4Roadster2003-2004") {
+            squareFootage = 127.7;
+        // Buick
+        } else if (selectedCarModel === "enclave2008-2017") {
+            squareFootage = 245.8;
+        } else if (selectedCarModel === "encore2014-2020") {
+            squareFootage = 215.4;
+        } else if (selectedCarModel === "parkAvenue1998-2000") {
+            squareFootage = 260.1;
+        } else if (selectedCarModel === "rainier2004-2007") {
+            squareFootage = 258.4;
+        } else if (selectedCarModel === "regal4Door1998-1999") {
+            squareFootage = 221.2;
+        } else if (selectedCarModel === "rendezvous2001-2008") {
+            squareFootage = 261.9;
+        } else if (selectedCarModel === "terrazza2005-2008") {
+            squareFootage = 289;
+        // Cadillac
+        } else if (selectedCarModel === "cts2003-2007") {
+            squareFootage = 207.1;
+        } else if (selectedCarModel === "deVille2000-2001") {
+            squareFootage = 226.6;
+        } else if (selectedCarModel === "escalade1999-2000") {
+            squareFootage = 284.7;
+        } else if (selectedCarModel === "escalade2001-2006") {
+            squareFootage = 287.4;
+        } else if (selectedCarModel === "escalade2007-2014") {
+            squareFootage = 299.9;
+        } else if (selectedCarModel === "escaladeESV2001-2006") {
+            squareFootage = 286;
+        } else if (selectedCarModel === "escaladeESV2007-2014") {
+            squareFootage = 326;
+        } else if (selectedCarModel === "ext2002-2006") {
+            squareFootage = 302.5;
+        } else if (selectedCarModel === "srx2005-2009") {
+            squareFootage = 271.4;
+        }
 
     } else if (selectedWrapSize === "partial") {
         const carModelSelection = document.getElementById("carModelSelection");
