@@ -71,7 +71,26 @@ function carMakeOptions() {
         addCarModelOption(carModelSelection, "z3Convertible1999-2002", "Z3 Convertible (1999-2002)");
         addCarModelOption(carModelSelection, "z3Coupe1999-2002", "Z3 Coupe (1999-2002)");
         addCarModelOption(carModelSelection, "z4Roadster2003-2004", "Z4 Roadster (2003-2004)");
+    } else if (selectedCarMake === "buick") {
+        addCarModelOption(carModelSelection, "enclave2008-2017", "Enclave (2008-2017)");
+        addCarModelOption(carModelSelection, "encore2014-2020", "Encore (2014-2020)");
+        addCarModelOption(carModelSelection, "parkAvenue1998-2000", "Park Avenue (1998-2000)");
+        addCarModelOption(carModelSelection, "rainier2004-2007", "Rainier (2004-2007)");
+        addCarModelOption(carModelSelection, "regal4Door1998-1999", "Regal 4-Door (1998-1999)");
+        addCarModelOption(carModelSelection, "rendezvous2001-2008", "Rendezvous (2001-2008)");
+        addCarModelOption(carModelSelection, "terrazza2005-2008", "Terrazza (2005-2008)");
+    } else if (selectedCarMake === "cadillac") {
+        addCarModelOption(carModelSelection, "cts2003-2007", "CTS (2003-2007)");
+        addCarModelOption(carModelSelection, "deVille2000-2001", "De Ville (2000-2001)");
+        addCarModelOption(carModelSelection, "escalade1999-2000", "Escalade (1999-2000)");
+        addCarModelOption(carModelSelection, "escalade2001-2006", "Escalade (2001-2006)");
+        addCarModelOption(carModelSelection, "escalade2007-2014", "Escalade (2007-2014)");
+        addCarModelOption(carModelSelection, "escaladeESV2001-2006", "Escalade ESV (2001-2006)");
+        addCarModelOption(carModelSelection, "escaladeESV2007-2014", "Escalade ESV (2007-2014)");
+        addCarModelOption(carModelSelection, "ext2002-2006", "EXT (2002-2006)");
+        addCarModelOption(carModelSelection, "srx2005-2009", "SRX (2005-2009)");
     }
+    
 };
 
 function addCarModelOption(selectElement, value, text) {
