@@ -4,34 +4,28 @@ import sqlite3
 conn = sqlite3.connect('car_database.db')
 c = conn.cursor()
 
-# Create Car Make Table
-c.execute('''CREATE TABLE IF NOT EXISTS car_make
+# Create Cars Table
+c.execute('''CREATE TABLE IF NOT EXISTS cars
           (id INTEGER PRIMARY KEY AUTOINCREMENT,
-          make TEXT)''')
+          make TEXT,
+          model TEXT)''')
 
-# Create Car Model Table
-c.execute('''CREATE TABLE IF NOT EXISTS car_model
-          (id INTEGER PRIMARY KEY AUTOINCREMENT,
-          make_id INTEGER,
-          model TEXT,
-          FOREIGN KEY (make_id) REFERENCES car_make(id))''')
-
-# Create Full Wrap Table
+# Create Full Wrap Table with Foreign Key Reference to Cars Table
 c.execute('''CREATE TABLE IF NOT EXISTS full_wrap
           (id INTEGER PRIMARY KEY AUTOINCREMENT,
-          model_id INTEGER,
+          car_id INTEGER,
           total_sq_ft REAL,
-          FOREIGN KEY (model_id) REFERENCES car_model(id))''')
+          FOREIGN KEY (car_id) REFERENCES cars(id))''')
 
-# Create Partial Wrap Table
+# Create Partial Wrap Table with Foreign Key Reference to Cars Table
 c.execute('''CREATE TABLE IF NOT EXISTS partial_wrap
           (id INTEGER PRIMARY KEY AUTOINCREMENT,
-          model_id INTEGER,
+          car_id INTEGER,
           side_sq_ft REAL,
           back_sq_ft REAL,
           hood_sq_ft REAL,
           roof_sq_ft REAL,
-          FOREIGN KEY (model_id) REFERENCES car_model(id))''')
+          FOREIGN KEY (car_id) REFERENCES cars(id))''')
 
 # Commit changes
 conn.commit()
