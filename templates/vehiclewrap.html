@@ -9,61 +9,8 @@
     <h1>Vehicle Wrap</h1>
 
     <label for="carMakeSelection">Select Car Make: </label>
-    <select name="carMakeSelection" onchange="carMakeOptions()">
+    <select name="carMakeSelection" id="carMakeSelection" onchange="carMakeOptions()">
         <option value="select">Select</option>
-        <option value="acura">Acura</option>
-        <option value="audi">Audi</option>
-        <option value="austin">Austin</option>
-        <option value="bmw">BMW</option>
-        <option value="buick">Buick</option>
-        <option value="cadillac">Cadillac</option>
-        <option value="chevrolet">Chevrolet</option>
-        <option value="chrysler">Chrysler</option>
-        <option value="daewoo">Daewoo</option>
-        <option value="dodge">Dodge</option>
-        <option value="fiat">Fiat</option>
-        <option value="ford">Ford</option>
-        <option value="freightliner">Freightliner</option>
-        <option value="geo">Geo</option>
-        <option value="gm">GM</option>
-        <option value="gmc">GMC</option>
-        <option value="hino">Hino</option>
-        <option value="honda">Honda</option>
-        <option value="humv">HUMV</option>
-        <option value="hyundai">Hyundai</option>
-        <option value="infiniti">Infiniti</option>
-        <option value="international">International</option>
-        <option value="isuzu">Isuzu</option>
-        <option value="jaguar">Jaguar</option>
-        <option value="jeep">Jeep</option>
-        <option value="kenworth">Kenworth</option>
-        <option value="kia">Kia</option>
-        <option value="land rover">Land Rover</option>
-        <option value="lexus">Lexus</option>
-        <option value="lincoln">Lincoln</option>
-        <option value="mack">Mack</option>
-        <option value="mazda">Mazda</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="mercury">Mercury</option>
-        <option value="mini">Mini</option>
-        <option value="mitsubishi">Mitsubishi</option>
-        <option value="nissan">Nissan</option>
-        <option value="oldsmobile">Oldsmobile</option>
-        <option value="peterbilt">Peterbilt</option>
-        <option value="plymouth">Plymouth</option>
-        <option value="pontiac">Pontiac</option>
-        <option value="saab">Saab</option>
-        <option value="saturn">Saturn</option>
-        <option value="scion">Scion</option>
-        <option value="smart">Smart</option>
-        <option value="sterling">Sterling</option>
-        <option value="subaru">Subaru</option>
-        <option value="suzuki">Suzuki</option>
-        <option value="tesla">Tesla</option>
-        <option value="toyota">Toyota</option>
-        <option value="volkswagen">Volkswagen</option>
-        <option value="volvo">Volvo</option>
-        <option value="western star">Western Star</option>
     </select>
 
     <label for="carModelSelection">Select Car Model: </label>
@@ -83,6 +30,7 @@
     <div id="partialOptions" style="display: none;">
         <label for="partialSelection">Select Partial Wrap Area: </label>
         <select name="partialSelection" id="partialSelection">
+            <option value="side">Select</option>
             <option value="side">Side</option>
             <option value="back">Back</option>
             <option value="hood">Hood</option>
@@ -101,10 +49,11 @@
     <button id="estimateButton">Get Estimation</button>
 
     <div id="fullEstimateDisplay"></div>
+    <div id="partialEstimateDisplay"></div>
 
     <!-- <p>Note: Measurements include 6 inch bleed</p> -->
 
     <a href="{{ url_for('home') }}"><button type="button">Home</button></a>
-    <script src="./vehiclewrap.js"></script>
+    <script src="/static/vehiclewrap.js"></script>
 </body>
 </html>
