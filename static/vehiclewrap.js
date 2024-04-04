@@ -87,6 +87,8 @@ function handleCarModelChange() {
 
     clearCustomOptions();
 
+    clearPartialEstimateDisplay();
+
     estimateDisplay.innerHTML = "";
 }
 
@@ -257,6 +259,11 @@ function clearEstimationDisplay() {
     const estimateDisplay = document.getElementById("fullEstimateDisplay");
     estimateDisplay.innerHTML = "";
 };
+
+function clearPartialEstimateDisplay() {
+    const partialEstimateDisplay = document.getElementById("partialEstimateDisplay");
+    partialEstimateDisplay.innerHTML = "";
+}
 
 function handleCarMakeChange() {
     clearCustomOptions();
