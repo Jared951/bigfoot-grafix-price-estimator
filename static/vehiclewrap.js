@@ -46,6 +46,9 @@ function carMakeOptions() {
     const wrapSizeSelection = document.getElementById("wrapSizeSelection");
     const estimateDisplay = document.getElementById("fullEstimateDisplay");
 
+    clearCustomEstimateDisplay();
+    clearPartialEstimateDisplay();
+
     carModelSelection.innerHTML = "<option value='non'>Select</option>";
     carWrapMaterialSelection.innerHTML = "<option value='Select'>Select</option>";
     wrapSizeSelection.value = "select"; 
@@ -88,7 +91,7 @@ function handleCarModelChange() {
     clearCustomEstimateDisplay();
 
     estimateDisplay.innerHTML = "";
-}
+};
 
 function populateCarWrapMaterials() {
     const carWrapMaterialSelection = document.getElementById("carWrapMaterialSelection");
@@ -167,7 +170,6 @@ function calculateEstimate() {
     const selectedWrapSize = wrapSizeSelection.value;
 
     let squareFootage = 0;
-    let selectedCarModel = ""; // New
     
     if (selectedWrapSize === "full"){
         const carModelSelection = document.getElementById("carModelSelection");
