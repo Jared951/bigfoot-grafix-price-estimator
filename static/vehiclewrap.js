@@ -82,12 +82,10 @@ function handleCarModelChange() {
     wrapSizeSelection.value = "select";
 
     hidePartialOptions();
-
     hideCustomOptions();
-
     clearCustomOptions();
-
     clearPartialEstimateDisplay();
+    clearCustomEstimateDisplay();
 
     estimateDisplay.innerHTML = "";
 }
@@ -124,6 +122,8 @@ function handleWrapSizeChange() {
     const selectedWrapSize = wrapSizeSelection.value;
 
     clearEstimationDisplay();
+    clearPartialEstimateDisplay();
+    clearCustomEstimateDisplay();
 
     if (selectedWrapSize === "partial") {
         showPartialOptions();
@@ -152,7 +152,6 @@ function hidePartialOptions() {
 function showCustomOptions() {
     const customOptionsDiv = document.getElementById("customOptions");
     customOptionsDiv.style.display = "block"; // change how it is styled
-
 };
 
 function hideCustomOptions() {
@@ -210,7 +209,7 @@ function calculateEstimate() {
 
         squareFootage = customWidth * customHeight;
 
-        calculateTotalSquareFeet(squareFootage, selectedMaterial);
+        calculateCustomEstimate(squareFootage, selectedMaterial);
     }
 };
 
@@ -231,6 +230,24 @@ function calculateTotalSquareFeet(squareFootage, selectedMaterial) {
     const estimateDisplay = document.getElementById("fullEstimateDisplay");
     estimateDisplay.innerHTML = `<p>Estimated Full Wrap Price: $${estimate.toFixed(2)}</p>`;
 };
+
+function calculateCustomEstimate(squareFootage, selectedMaterial) {
+    const carWrapMaterials = {
+        "Chrome": 8.00,
+        "Carbon Fiber": 5.00,
+        "Vinyl Gloss": 2.50,
+        "Vinyl Matte": 3.00
+    };
+
+    const pricePerSquareFoot = carWrapMaterials[selectedMaterial];
+
+    const estimate = squareFootage * pricePerSquareFoot;
+
+    console.log("Custom Estimated Price:", estimate);
+
+    const estimateDisplay = document.getElementById("customEstimateDisplay");
+    estimateDisplay.innerHTML = `<p>Estimated Custom Wrap Price: $${estimate.toFixed(2)}</p>`;
+}
 
 function calculatePartialWrapEstimate(partial_sq_ft, partialWrapSelection, selectedMaterial) {
     let squareFootage = partial_sq_ft;
@@ -263,6 +280,11 @@ function clearEstimationDisplay() {
 function clearPartialEstimateDisplay() {
     const partialEstimateDisplay = document.getElementById("partialEstimateDisplay");
     partialEstimateDisplay.innerHTML = "";
+}
+
+function clearCustomEstimateDisplay() {
+    const customEstimateDisplay = document.getElementById("customEstimateDisplay")
+    customEstimateDisplay.innerHTML = "";
 }
 
 function handleCarMakeChange() {
