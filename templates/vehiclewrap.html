@@ -4,57 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vehicle Wrap</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body>
-    <h1>Vehicle Wrap</h1>
+<body class="flex justify-center items-center h-screen bg-[#121212] text-[#e7e7e7]"> 
 
-    <label for="carMakeSelection">Select Car Make: </label>
-    <select name="carMakeSelection" id="carMakeSelection" onchange="carMakeOptions()">
-        <option value="select">Select</option>
-    </select>
+    <div class="w-96 p-6 flex flex-col justify-center items-center rounded-[12px] bg-[#414141]">   
 
-    <label for="carModelSelection">Select Car Model: </label>
-    <select id="carModelSelection"></select>
-
-    <label for="carWrapMaterialSelection">Select Car Wrap Material: </label>
-    <select id="carWrapMaterialSelection"></select>
-
-    <label for="wrapSizeSelection">Select Wrap Size: </label>
-    <select name="wrapSizeSelection" id="wrapSizeSelection">
-        <option value="select">Select</option>
-        <option value="full" id="full">Full</option>
-        <option value="partial" id="partial">Partial</option>
-        <option value="custom" id="custom">Custom</option>
-    </select>
-
-    <div id="partialOptions" style="display: none;">
-        <label for="partialSelection">Select Partial Wrap Area: </label>
-        <select name="partialSelection" id="partialSelection">
-            <option value="side">Select</option>
-            <option value="side">Side</option>
-            <option value="back">Back</option>
-            <option value="hood">Hood</option>
-            <option value="roof">Roof</option>
+        <h1 class="font-bold text-4xl mb-4">Vehicle Wrap</h1>
+        <nav class="mb-4 flex justify-center">
+            <a href="{{ url_for('home') }}" class="mr-2"><button type="button">Home</button></a> 
+            <a href="{{ url_for('sign') }}" class="mr-2"><button type="button">Sign</button></a> 
+            <a href="{{ url_for('banner') }}" class="mr-2"><button type="button">Banner</button></a> 
+            <a href="{{ url_for('apparel') }}"><button type="button">Apparel</button></a>
+        </nav> 
+        
+        <label for="carMakeSelection">Select Car Make: </label>
+        <select name="carMakeSelection" id="carMakeSelection" onchange="carMakeOptions()" class="p-1 w-80 mb-4 rounded mt-2 bg-[#595959] hover:bg-[#717171]">
+            <option value="select">Select</option>
         </select>
-    </div>
-    
-    <div id="customOptions" style="display: none;">
-        <label for="customWidth">Width (in feet): </label>
-        <input type="number" id="customWidth" name="customWidth" step="1" min="0">
-        <br>
-        <label for="customHeight">Height (in feet): </label>
-        <input type="number" id="customHeight" name="customHeight" step="1" min="0">
-    </div>       
 
-    <button id="estimateButton">Get Estimation</button>
+        <label for="carModelSelection">Select Car Model: </label>
+        <select id="carModelSelection" class="p-1 rounded mt-2 w-80 mb-4 bg-[#595959] hover:bg-[#717171]"></select>
 
-    <div id="fullEstimateDisplay"></div>
-    <div id="partialEstimateDisplay"></div>
-    <div id="customEstimateDisplay"></div>
+        <label for="carWrapMaterialSelection">Select Car Wrap Material: </label>
+        <select id="carWrapMaterialSelection" class="p-1 rounded mt-2 w-80 mb-4 bg-[#595959] hover:bg-[#717171]"></select>
 
-    <!-- <p>Note: Measurements include 6 inch bleed</p> -->
+        <label for="wrapSizeSelection" >Select Wrap Size: </label>
+        <select name="wrapSizeSelection" id="wrapSizeSelection" class="p-1 rounded mt-2 w-80 mb-4 bg-[#595959] hover:bg-[#717171]">
+            <option value="select">Select</option>
+            <option value="full" id="full">Full</option>
+            <option value="partial" id="partial">Partial</option>
+            <option value="custom" id="custom">Custom</option>
+        </select>
 
-    <a href="{{ url_for('home') }}"><button type="button">Home</button></a>
+        <div id="partialOptions" style="display: none;">
+            <label for="partialSelection" class="flex justify-center items-center">Select Partial Wrap Area: </label>
+            <select name="partialSelection" id="partialSelection" class="p-1 rounded mt-2 w-80 mb-4 bg-[#595959] hover:bg-[#717171]">
+                <option value="select">Select</option>
+                <option value="side">Side</option>
+                <option value="back">Back</option>
+                <option value="hood">Hood</option>
+                <option value="roof">Roof</option>
+            </select>
+        </div>
+        
+        <div id="customOptions" style="display: none;">
+            <label for="customWidth" class="flex justify-center items-center">Width (in feet): </label>
+            <input type="number" id="customWidth" name="customWidth" step="1" min="0" class="p-1 rounded mt-2 w-80 mb-4 bg-[#595959] hover:bg-[#717171]">
+            <label for="customHeight" class="flex justify-center items-center">Height (in feet): </label>
+            <input type="number" id="customHeight" name="customHeight" step="1" min="0" class="p-1 rounded mt-2 w-80 mb-4 bg-[#595959] hover:bg-[#717171]">
+        </div>       
+
+        <button id="estimateButton" class="bg-blue-700 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded mt-4 w-80 mb-4">Get Estimation</button>
+
+        <div id="fullEstimateDisplay" class="text-center text-lg font-semibold"></div>
+        <div id="partialEstimateDisplay" class="text-center text-lg font-semibold"></div>
+        <div id="customEstimateDisplay" class="text-center text-lg font-semibold"></div>
+
+        <p class="text-center mt-4 text-xs">Note: Measurements include six inch bleed</p>
+    </div> 
     <script src="/static/vehiclewrap.js"></script>
 </body>
 </html>

@@ -144,7 +144,7 @@ function handleWrapSizeChange() {
 
 function showPartialOptions() {
     const partialOptionsDiv = document.getElementById("partialOptions");
-    partialOptionsDiv.style.display = "grid"; // change how it is styled
+    partialOptionsDiv.style.display = "block"; 
 };
 
 function hidePartialOptions() {
@@ -154,7 +154,7 @@ function hidePartialOptions() {
 
 function showCustomOptions() {
     const customOptionsDiv = document.getElementById("customOptions");
-    customOptionsDiv.style.display = "grid"; // change how it is styled
+    customOptionsDiv.style.display = "block"; 
 };
 
 function hideCustomOptions() {
