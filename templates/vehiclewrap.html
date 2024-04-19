@@ -11,12 +11,21 @@
     <div class="w-96 p-6 flex flex-col justify-center items-center rounded-[12px] bg-[#414141]">   
 
         <h1 class="font-bold text-4xl mb-4">Vehicle Wrap</h1>
-        <nav class="mb-4 flex justify-center">
-            <a href="{{ url_for('home') }}" class="mr-2"><button type="button">Home</button></a> 
-            <a href="{{ url_for('sign') }}" class="mr-2"><button type="button">Sign</button></a> 
-            <a href="{{ url_for('banner') }}" class="mr-2"><button type="button">Banner</button></a> 
-            <a href="{{ url_for('apparel') }}"><button type="button">Apparel</button></a>
-        </nav> 
+
+        <nav class="mb-4 flex justify-center space-x-5 p-1 font-bold">
+            <a href="{{ url_for('home') }}" class="button-link">
+                <span class="underline hover:text-blue-500">Home</span>
+            </a>
+            <a href="{{ url_for('sign') }}" class="button-link">
+                <span class="underline hover:text-blue-500">Sign</span>
+            </a>
+            <a href="{{ url_for('banner') }}" class="button-link">
+                <span class="underline hover:text-blue-500">Banner</span>
+            </a>
+            <a href="{{ url_for('apparel') }}" class="button-link">
+                <span class="underline hover:text-blue-500">Apparel</span>
+            </a>            
+        </nav>
         
         <label for="carMakeSelection">Select Car Make: </label>
         <select name="carMakeSelection" id="carMakeSelection" onchange="carMakeOptions()" class="p-1 w-80 mb-4 rounded mt-2 bg-[#595959] hover:bg-[#717171]">
