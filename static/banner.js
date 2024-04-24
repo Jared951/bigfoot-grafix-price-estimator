@@ -62,5 +62,5 @@ function calculateBannerPrice() {
 
     const bannerPriceDisplay = document.getElementById("bannerPriceDisplay");
 
-    bannerPriceDisplay.textContent = "Total Price: $" + totalBannerPrice.toFixed(2);
+    bannerPriceDisplay.textContent = "Banner Estimate: $" + totalBannerPrice.toFixed(2);
 };

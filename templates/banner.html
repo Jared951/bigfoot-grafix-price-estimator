@@ -4,32 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body>
-    <h1>Banner</h1>
+<body class="body">
+    <div class="container">
+        <h1 class="font-bold text-4xl mb-4">Banner</h1>
 
-    <label for="bannerTypeSelection">Select a Banner Type: </label>
-    <select name="bannerTypeSelection" onchange="bannerOptions()">
-        <option value="select">Select</option>
-        <option value="vinyl">Vinyl</option>
-        <option value="mesh">Mesh</option>
-        <option value="fabric">Fabric</option>
-    </select>
+        <nav class="mb-4 flex justify-center space-x-5 p-1 font-bold">
+            <a href="{{ url_for('home') }}" class="button-link">
+                <span class="underline hover:text-blue-500">Home</span>
+            </a>
+            <a href="{{ url_for('vehicle_wrap') }}" class="button-link">
+                <span class="underline hover:text-blue-500">Vehicle</span>
+            </a>
+            <a href="{{ url_for('sign') }}" class="button-link">
+                <span class="underline hover:text-blue-500">Sign</span>
+            </a>
+            <a href="{{ url_for('banner') }}" class="button-link">
+                <span class="underline hover:text-blue-500">Banner</span>
+            </a>
+            <a href="{{ url_for('apparel') }}" class="button-link">
+                <span class="underline hover:text-blue-500">Apparel</span>
+            </a>            
+        </nav>
 
-    <label for="bannerMaterialSelection">Select Banner Material</label>
-    <select id="bannerMaterialSelection"></select>
+        <label for="bannerTypeSelection">Select a Banner Type: </label>
+        <select name="bannerTypeSelection" onchange="bannerOptions()" class="dropdown">
+            <option value="select">Select</option>
+            <option value="vinyl">Vinyl</option>
+            <option value="mesh">Mesh</option>
+            <option value="fabric">Fabric</option>
+        </select>
 
-    <label for="bannerWidth">Enter Width (in feet): </label>
-    <input type="number" id="bannerWidth" placeholder="Width">
+        <label for="bannerMaterialSelection">Select Banner Material</label>
+        <select id="bannerMaterialSelection" class="dropdown"></select>
 
-    <label for="bannerHeight">Enter Height (in feet): </label>
-    <input type="number" id="bannerHeight" placeholder="Height">
+        <label for="bannerWidth">Enter Width (in feet): </label>
+        <input type="number" id="bannerWidth" placeholder="Width" class="dropdown">
 
-    <button onclick="calculateBannerPrice()">Get Estimation</button>
+        <label for="bannerHeight">Enter Height (in feet): </label>
+        <input type="number" id="bannerHeight" placeholder="Height" class="dropdown">
 
-    <div id="bannerPriceDisplay"></div>
+        <button onclick="calculateBannerPrice()" class="estimate-button">Get Estimation</button>
 
-    <a href="{{ url_for('home') }}"><button type="button">Home</button></a>
+        <div id="bannerPriceDisplay" class="text-center text-lg font-semibold"></div>
+
+    </div>
     <script src="/static/banner.js"></script>
 </body>
 </html>

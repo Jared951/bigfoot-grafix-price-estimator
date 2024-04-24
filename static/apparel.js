@@ -136,5 +136,5 @@ function calculateApparelPrice() {
 
     const apparelPriceDisplay = document.getElementById("apparelPriceDisplay");
 
-    apparelPriceDisplay.textContent = "Total Price: $" + totalApparelPrice.toFixed(2);
+    apparelPriceDisplay.textContent = "Apparel Estimate: $" + totalApparelPrice.toFixed(2);
 };

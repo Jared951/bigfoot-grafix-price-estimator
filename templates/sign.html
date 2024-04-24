@@ -4,32 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body>
-    <h1>Sign</h1>
+<body class="body">
+    <div class="container">
+        <h1 class="font-bold text-4xl mb-4">Sign</h1>
 
-    <label for="signTypeSelection">Select a Sign Type: </label>
-    <select id="signTypeSelection" onchange="signOptions()">
-        <option value="select">Select</option>
-        <option value="backlit">Backlit</option>
-        <option value="acrylic">Acrylic</option>
-        <option value="windowDecal">Window Decal</option>
-    </select>
+        <nav class="mb-4 flex justify-center space-x-5 p-1 font-bold">
+            <a href="{{ url_for('home') }}" class="button-link">
+                <span class="underline hover:text-blue-500">Home</span>
+            </a>
+            <a href="{{ url_for('vehicle_wrap') }}" class="button-link">
+                <span class="underline hover:text-blue-500">Vehicle</span>
+            </a>
+            <a href="{{ url_for('sign') }}" class="button-link">
+                <span class="underline hover:text-blue-500">Sign</span>
+            </a>
+            <a href="{{ url_for('banner') }}" class="button-link">
+                <span class="underline hover:text-blue-500">Banner</span>
+            </a>
+            <a href="{{ url_for('apparel') }}" class="button-link">
+                <span class="underline hover:text-blue-500">Apparel</span>
+            </a>            
+        </nav>
 
-    <label for="signMaterialSelection">Select Sign Material</label>
-    <select id="signMaterialSelection"></select>
+        <label for="signTypeSelection">Select a Sign Type: </label>
+        <select id="signTypeSelection" onchange="signOptions()" class="dropdown">
+            <option value="select">Select</option>
+            <option value="backlit">Backlit</option>
+            <option value="acrylic">Acrylic</option>
+            <option value="windowDecal">Window Decal</option>
+        </select>
 
-    <label for="signWidth">Enter Width (in feet): </label>
-    <input type="number" id="signWidth" placeholder="Width">
+        <label for="signMaterialSelection">Select Sign Material</label>
+        <select id="signMaterialSelection" class="dropdown"></select>
 
-    <label for="signHeight">Enter Height (in feet): </label>
-    <input type="number" id="signHeight" placeholder="Height">
+        <label for="signWidth">Enter Width (in feet): </label>
+        <input type="number" id="signWidth" placeholder="Width" class="dropdown">
 
-    <button onclick="calculateSignPrice()">Get Estimation</button>
+        <label for="signHeight">Enter Height (in feet): </label>
+        <input type="number" id="signHeight" placeholder="Height" class="dropdown">
 
-    <div id="signPriceDisplay"></div>
+        <button onclick="calculateSignPrice()" class="estimate-button">Get Estimation</button>
 
-    <a href="{{ url_for('home') }}"><button type="button">Home</button></a>
+        <div id="signPriceDisplay" class="text-center text-lg font-semibold"></div>
+
+    </div>
     <script src="/static/sign.js"></script>
 </body>
 </html>

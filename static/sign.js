@@ -89,5 +89,5 @@ function calculateSignPrice() {
     // Display the price in the HTML
     const signPriceDisplay = document.getElementById("signPriceDisplay");
     // Access the text content of the signPriceDisplay element and then show the content on the HTML
-    signPriceDisplay.textContent = "Total Price: $" + totalSignPrice.toFixed(2);
+    signPriceDisplay.textContent = "Sign Estimate: $" + totalSignPrice.toFixed(2);
 };
