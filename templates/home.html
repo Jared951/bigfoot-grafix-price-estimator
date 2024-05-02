@@ -6,24 +6,27 @@
     <title>BigFoot Grafix Pricing Estimator</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body class="body">
-    <div class="container">
-        <h1 class="font-bold text-4xl mb-4">Bigfoot Grafix Pricing Estimator</h1>
+<body class="flex justify-center items-center h-screen bg-[#121212] text-[#e7e7e7]">
+    <div class="w-96 p-6 flex flex-col justify-center items-center rounded-[12px] bg-[#414141]">
+        <h1 class="font-bold text-4xl mb-6 text-center">BigFoot Grafix Pricing Estimator</h1>
         <nav class="mb-4 flex justify-center space-x-5 p-1 font-bold">
-            <a href="{{ url_for('home') }}" class="button-link">
-                <span class="underline hover:text-blue-500">Home</span>
+            <a href="{{ url_for('vehicle_wrap') }}" class="button-link flex flex-col items-center">
+                <img src="{{ url_for('static', filename='icons/car.svg') }}" alt="Vehicle" class="bg-[#717171] p-4 rounded-2xl hover:bg-[#898989]">
+                <span class="hover:text-blue-500 mt-1">Vehicle</span>
             </a>
-            <a href="{{ url_for('vehicle_wrap') }}" class="button-link">
-                <span class="underline hover:text-blue-500">Vehicle</span>
+            <a href="{{ url_for('sign') }}" class="button-link flex flex-col items-center">
+                <img src="{{ url_for('static', filename='icons/sign.svg') }}" alt="Sign" class="bg-[#717171] p-4 rounded-2xl hover:bg-[#898989]">
+                <span class="hover:text-blue-500 mt-1">Sign</span>
             </a>
-            <a href="{{ url_for('sign') }}" class="button-link">
-                <span class="underline hover:text-blue-500">Sign</span>
+        </nav>
+        <nav class="flex justify-center space-x-5 p-1 font-bold">
+            <a href="{{ url_for('banner') }}" class="button-link flex flex-col items-center">
+                <img src="{{ url_for('static', filename='icons/banner.svg') }}" alt="Banner" class="bg-[#717171] p-4 rounded-2xl hover:bg-[#898989]">
+                <span class="hover:text-blue-500 mt-1">Banner</span>
             </a>
-            <a href="{{ url_for('banner') }}" class="button-link">
-                <span class="underline hover:text-blue-500">Banner</span>
-            </a>
-            <a href="{{ url_for('apparel') }}" class="button-link">
-                <span class="underline hover:text-blue-500">Apparel</span>
+            <a href="{{ url_for('apparel') }}" class="button-link flex flex-col items-center">
+                <img src="{{ url_for('static', filename='icons/apparel.svg') }}" alt="Apparel" class="bg-[#717171] p-4 rounded-2xl hover:bg-[#898989]">
+                <span class="hover:text-blue-500 mt-1">Apparel</span>
             </a>            
         </nav>
     </div>

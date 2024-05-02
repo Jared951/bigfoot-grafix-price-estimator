@@ -1,7 +1,7 @@
 from flask import Flask, render_template, jsonify, request
 import sqlite3
 
-app = Flask(__name__, static_url_path='/static')
+app = Flask(__name__, static_url_path='/static', static_folder='static')
 
 def get_car_makes_from_database():
     conn = sqlite3.connect('car_database.db')
