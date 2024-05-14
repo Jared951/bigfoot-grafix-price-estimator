@@ -6,13 +6,12 @@
     <title>Vehicle Wrap</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body class="body"> 
+<body class="flex justify-center items-center h-screen bg-[#121212] text-[#e7e7e7]"> 
 
-    <div class="container">   
-
+    <div class="w-96 p-6 flex flex-col justify-center items-center rounded-[12px] bg-[#414141]">   
         <h1 class="font-bold text-4xl mb-4">Vehicle Wrap</h1>
-
-        <nav class="mb-4 flex justify-center space-x-5 p-1 font-bold">
+          
+        <nav id="navbar"class="mb-4 flex justify-center space-x-5 p-1 font-bold">
             <a href="{{ url_for('home') }}" class="button-link">
                 <span class="underline hover:text-blue-500">Home</span>
             </a>
@@ -31,49 +30,50 @@
         </nav>
         
         <label for="carMakeSelection">Select Car Make: </label>
-        <select name="carMakeSelection" id="carMakeSelection" onchange="carMakeOptions()" class="dropdown">
+        <select name="carMakeSelection" id="carMakeSelection" onchange="carMakeOptions()" class="w-full p-1 mb-4 rounded mt-2 bg-[#595959] hover:bg-[#717171]">
             <option value="select">Select</option>
         </select>
 
         <label for="carModelSelection">Select Car Model: </label>
-        <select id="carModelSelection" class="dropdown"></select>
+        <select id="carModelSelection" class="w-full p-1 mb-4 rounded mt-2 bg-[#595959] hover:bg-[#717171]"></select>
 
         <label for="carWrapMaterialSelection">Select Car Wrap Material: </label>
-        <select id="carWrapMaterialSelection" class="dropdown"></select>
+        <select id="carWrapMaterialSelection" class="w-full p-1 mb-4 rounded mt-2 bg-[#595959] hover:bg-[#717171]"></select>
 
-        <label for="wrapSizeSelection" >Select Wrap Size: </label>
-        <select name="wrapSizeSelection" id="wrapSizeSelection" class="dropdown">
+        <label for="wrapSizeSelection">Select Wrap Size: </label>
+        <select name="wrapSizeSelection" id="wrapSizeSelection" class="w-full p-1 mb-4 rounded mt-2 bg-[#595959] hover:bg-[#717171]">
             <option value="select">Select</option>
             <option value="full" id="full">Full</option>
             <option value="partial" id="partial">Partial</option>
             <option value="custom" id="custom">Custom</option>
         </select>
 
-        <div id="partialOptions" style="display: none;">
-            <label for="partialSelection" class="flex justify-center items-center">Select Partial Wrap Area: </label>
-            <select name="partialSelection" id="partialSelection" class="dropdown">
+        <div id="partialOptions" style="display: none;" class="w-full flex flex-col items-center">
+            <label for="partialSelection" class="flex justify-center items-center">Select Partial Wrap Area:</label>
+            <select name="partialSelection" id="partialSelection" class="w-full p-1 mb-4 rounded mt-2 bg-[#595959] hover:bg-[#717171] flex-1">
                 <option value="select">Select</option>
                 <option value="side">Side</option>
                 <option value="back">Back</option>
                 <option value="hood">Hood</option>
                 <option value="roof">Roof</option>
             </select>
-        </div>
+        </div>        
         
-        <div id="customOptions" style="display: none;">
+        <div id="customOptions" style="display: none;" class="w-full flex flex-col items-center">
             <label for="customWidth" class="flex justify-center items-center">Width (in feet): </label>
-            <input type="number" id="customWidth" name="customWidth" step="1" min="0" placeholder="Width" class="dropdown">
+            <input type="number" id="customWidth" name="customWidth" step="1" min="0" placeholder="Width" class="w-full p-1 mb-4 rounded mt-2 bg-[#595959] hover:bg-[#717171]">
             <label for="customHeight" class="flex justify-center items-center">Height (in feet): </label>
-            <input type="number" id="customHeight" name="customHeight" step="1" min="0" placeholder="Height" class="dropdown">
+            <input type="number" id="customHeight" name="customHeight" step="1" min="0" placeholder="Height" class="w-full p-1 mb-4 rounded mt-2 bg-[#595959] hover:bg-[#717171]">
         </div>       
 
-        <button id="estimateButton" class="estimate-button">Get Estimation</button>
+        <button id="estimateButton" class="w-full bg-blue-700 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded mt-4 mb-4">Get Estimation</button>
 
         <div id="fullEstimateDisplay" class="text-center text-lg font-semibold"></div>
         <div id="partialEstimateDisplay" class="text-center text-lg font-semibold"></div>
         <div id="customEstimateDisplay" class="text-center text-lg font-semibold"></div>
 
-        <p class="text-center mt-4 text-xs">Note: Measurements include six inch bleed</p>
+        <p class="text-center text-xs mt-4">Note: Measurements include six inch bleed</p>
+
     </div> 
     <script src="/static/vehiclewrap.js"></script>
 </body>

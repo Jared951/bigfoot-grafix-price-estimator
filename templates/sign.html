@@ -6,11 +6,11 @@
     <title>Sign</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body class="body">
-    <div class="container">
+<body class="flex justify-center items-center h-screen bg-[#121212] text-[#e7e7e7]">
+    <div class="w-96 p-6 flex flex-col justify-center items-center rounded-[12px] bg-[#414141]">
         <h1 class="font-bold text-4xl mb-4">Sign</h1>
 
-        <nav class="mb-4 flex justify-center space-x-5 p-1 font-bold">
+        <nav id="navbar"class="mb-4 flex justify-center space-x-5 p-1 font-bold">
             <a href="{{ url_for('home') }}" class="button-link">
                 <span class="underline hover:text-blue-500">Home</span>
             </a>
@@ -29,7 +29,7 @@
         </nav>
 
         <label for="signTypeSelection">Select a Sign Type: </label>
-        <select id="signTypeSelection" onchange="signOptions()" class="dropdown">
+        <select id="signTypeSelection" onchange="signOptions()" class="w-full p-1 mb-4 rounded mt-2 bg-[#595959] hover:bg-[#717171]">
             <option value="select">Select</option>
             <option value="backlit">Backlit</option>
             <option value="acrylic">Acrylic</option>
@@ -37,15 +37,15 @@
         </select>
 
         <label for="signMaterialSelection">Select Sign Material</label>
-        <select id="signMaterialSelection" class="dropdown"></select>
+        <select id="signMaterialSelection" class="w-full p-1 mb-4 rounded mt-2 bg-[#595959] hover:bg-[#717171]"></select>
 
         <label for="signWidth">Enter Width (in feet): </label>
-        <input type="number" id="signWidth" placeholder="Width" class="dropdown">
+        <input type="number" id="signWidth" placeholder="Width" class="w-full p-1 mb-4 rounded mt-2 bg-[#595959] hover:bg-[#717171]">
 
         <label for="signHeight">Enter Height (in feet): </label>
-        <input type="number" id="signHeight" placeholder="Height" class="dropdown">
+        <input type="number" id="signHeight" placeholder="Height" class="w-full p-1 mb-4 rounded mt-2 bg-[#595959] hover:bg-[#717171]">
 
-        <button onclick="calculateSignPrice()" class="estimate-button">Get Estimation</button>
+        <button onclick="calculateSignPrice()" class="w-full bg-blue-700 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded mt-4 mb-4">Get Estimation</button>
 
         <div id="signPriceDisplay" class="text-center text-lg font-semibold"></div>
 

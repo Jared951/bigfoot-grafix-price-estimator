@@ -144,7 +144,7 @@ function handleWrapSizeChange() {
 
 function showPartialOptions() {
     const partialOptionsDiv = document.getElementById("partialOptions");
-    partialOptionsDiv.style.display = "block"; 
+    partialOptionsDiv.style.display = "flex"; 
 };
 
 function hidePartialOptions() {
@@ -154,7 +154,7 @@ function hidePartialOptions() {
 
 function showCustomOptions() {
     const customOptionsDiv = document.getElementById("customOptions");
-    customOptionsDiv.style.display = "block"; 
+    customOptionsDiv.style.display = "flex"; 
 };
 
 function hideCustomOptions() {
@@ -166,8 +166,20 @@ function calculateEstimate() {
     const carWrapMaterialSelection = document.getElementById("carWrapMaterialSelection");
     const selectedMaterial = carWrapMaterialSelection.value;
 
+    const carMakeSelection = document.getElementById("carMakeSelection");
+    const selectedCarMake = carMakeSelection.value;
+
+    const carModelSelection = document.getElementById("carModelSelection");
+    const selectedCarModel = carModelSelection.value;
+
     const wrapSizeSelection = document.getElementById("wrapSizeSelection");
     const selectedWrapSize = wrapSizeSelection.value;
+
+    if (selectedWrapSize === "select" || selectedMaterial === "select" || selectedCarMake === "select" || selectedCarModel === "select") {
+        alert("Please select a Car Make, Car Model, Wrap Size, and Wrap Material");
+        return;
+    }
+    // New Alert
 
     let squareFootage = 0;
     

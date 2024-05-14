@@ -6,11 +6,11 @@
     <title>Apparel</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body class="body"> 
-    <div class="container">
+<body class="flex justify-center items-center h-screen bg-[#121212] text-[#e7e7e7]"> 
+    <div class="w-96 p-6 flex flex-col justify-center items-center rounded-[12px] bg-[#414141]">
         <h1 class="font-bold text-4xl mb-4">Apparel</h1>
 
-        <nav class="mb-4 flex justify-center space-x-5 p-1 font-bold">
+        <nav id="navbar"class="mb-4 flex justify-center space-x-5 p-1 font-bold">
             <a href="{{ url_for('home') }}" class="button-link">
                 <span class="underline hover:text-blue-500">Home</span>
             </a>
@@ -29,7 +29,7 @@
         </nav>
 
         <label for="apparelTypeSelection">Select Apparel Type: </label>
-        <select name="apparelTypeSelection" onchange="apparelOptions()" class="dropdown">
+        <select name="apparelTypeSelection" onchange="apparelOptions()" class="w-full p-1 mb-4 rounded mt-2 bg-[#595959] hover:bg-[#717171]">
             <option value="select">Select</option>
             <option value="tShirt">T-Shirt</option>
             <option value="longsleeveShirt">Longsleeve Shirt</option>
@@ -41,12 +41,12 @@
         </select>
 
         <label for="apparelMaterialSelection">Select Apparel Material</label>
-        <select id="apparelMaterialSelection" class="dropdown"></select>
+        <select id="apparelMaterialSelection" class="w-full p-1 mb-4 rounded mt-2 bg-[#595959] hover:bg-[#717171]"></select>
 
         <label for="quantity">Quantity:</label>
-        <input type="number" id="quantity" placeholder="Enter quantity" min="1" class="dropdown">
+        <input type="number" id="quantity" placeholder="Enter quantity" min="1" class="w-full p-1 mb-4 rounded mt-2 bg-[#595959] hover:bg-[#717171]">
 
-        <button onclick="calculateApparelPrice()" class="estimate-button">Get Estimation</button>
+        <button onclick="calculateApparelPrice()" class="w-full bg-blue-700 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded mt-4 mb-4">Get Estimation</button>
 
         <div id="apparelPriceDisplay" class="text-center text-lg font-semibold"></div>
 

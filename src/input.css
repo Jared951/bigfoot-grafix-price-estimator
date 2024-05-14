@@ -2,18 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-.dropdown {
-    @apply p-1 w-80 mb-4 rounded mt-2 bg-[#595959] hover:bg-[#717171];
+@media (max-width: 568px) {
+    .w-96 {
+        width: 90%;
+    }
 }
 
-.body {
-    @apply flex justify-center items-center h-screen bg-[#121212] text-[#e7e7e7];
+@media (max-width: 414px) {
+    #navbar > * {
+        margin-left: 0.5rem; 
+        margin-right: 0.5rem; 
+    }
 }
 
-.estimate-button {
-    @apply bg-blue-700 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded mt-4 w-80 mb-4;
-}
-
-.container {
-    @apply w-96 p-6 flex flex-col justify-center items-center rounded-[12px] bg-[#414141];
+@media (max-width: 375px) {
+    #navbar > * {
+        margin-left: 0.25rem; 
+        margin-right: 0.25rem; 
+    }
 }
