@@ -176,10 +176,9 @@ function calculateEstimate() {
     const selectedWrapSize = wrapSizeSelection.value;
 
     if (selectedWrapSize === "select" || selectedMaterial === "select" || selectedCarMake === "select" || selectedCarModel === "select") {
-        alert("Please select a Car Make, Car Model, Wrap Size, and Wrap Material");
+        alert("Please select a Car Make, Car Model, Wrap Material, and Wrap Size");
         return;
     }
-    // New Alert
 
     let squareFootage = 0;
     
