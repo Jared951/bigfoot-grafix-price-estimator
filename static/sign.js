@@ -86,8 +86,11 @@ function calculateSignPrice() {
     // Calculate the total price by multiplying the sign area by the sign price per square foot
     const totalSignPrice = signArea * signPricePerSquareFoot;
 
+    // Format the total price with commas and two decimal places
+    const formattedTotalSignPrice = totalSignPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
     // Display the price in the HTML
     const signPriceDisplay = document.getElementById("signPriceDisplay");
     // Access the text content of the signPriceDisplay element and then show the content on the HTML
-    signPriceDisplay.textContent = "Sign Estimate: $" + totalSignPrice.toFixed(2);
+    signPriceDisplay.textContent = "Sign Estimate: $" + formattedTotalSignPrice;
 };

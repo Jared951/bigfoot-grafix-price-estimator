@@ -240,8 +240,10 @@ function calculateTotalSquareFeet(squareFootage, selectedMaterial) {
     
     console.log("Estimated Price:", estimate);
     
+    const formattedEstimate = estimate.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
     const estimateDisplay = document.getElementById("fullEstimateDisplay");
-    estimateDisplay.innerHTML = `<p>Estimated Full Wrap Price: $${estimate.toFixed(2)}</p>`;
+    estimateDisplay.innerHTML = `<p>Estimated Full Wrap Price: $${formattedEstimate}</p>`;
 };
 
 function calculateCustomEstimate(squareFootage, selectedMaterial) {
@@ -258,9 +260,11 @@ function calculateCustomEstimate(squareFootage, selectedMaterial) {
 
     console.log("Custom Estimated Price:", estimate);
 
+    const formattedEstimate = estimate.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
     const estimateDisplay = document.getElementById("customEstimateDisplay");
-    estimateDisplay.innerHTML = `<p>Estimated Custom Wrap Price: $${estimate.toFixed(2)}</p>`;
-}
+    estimateDisplay.innerHTML = `<p>Estimated Custom Wrap Price: $${formattedEstimate}</p>`;
+};
 
 function calculatePartialWrapEstimate(partial_sq_ft, partialWrapSelection, selectedMaterial) {
     let squareFootage = partial_sq_ft;
@@ -281,8 +285,10 @@ function calculatePartialWrapEstimate(partial_sq_ft, partialWrapSelection, selec
     console.log('Price per square foot:', pricePerSquareFoot);
     console.log('Estimated Partial Wrap Price:', estimate.toFixed(2));
 
+    const formattedEstimate = estimate.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
     const partialEstimateDisplay = document.getElementById("partialEstimateDisplay");
-    partialEstimateDisplay.innerHTML = `<p>Estimated Partial Wrap Price: $${estimate.toFixed(2)}</p>`;
+    partialEstimateDisplay.innerHTML = `<p>Estimated Partial Wrap Price: $${formattedEstimate}</p>`;
 };
 
 function clearEstimationDisplay() {

@@ -60,7 +60,9 @@ function calculateBannerPrice() {
 
     const totalBannerPrice = bannerArea * bannerPricePerSquareFoot;
 
+    const formattedTotalBannerPrice = totalBannerPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
     const bannerPriceDisplay = document.getElementById("bannerPriceDisplay");
 
-    bannerPriceDisplay.textContent = "Banner Estimate: $" + totalBannerPrice.toFixed(2);
+    bannerPriceDisplay.textContent = "Banner Estimate: $" + formattedTotalBannerPrice;
 };

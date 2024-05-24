@@ -134,7 +134,8 @@ function calculateApparelPrice() {
 
     const totalApparelPrice = quantity * apparelPricePerQuantity;
 
-    const apparelPriceDisplay = document.getElementById("apparelPriceDisplay");
+    const formattedTotalApparelPrice = totalApparelPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
-    apparelPriceDisplay.textContent = "Apparel Estimate: $" + totalApparelPrice.toFixed(2);
+    const apparelPriceDisplay = document.getElementById("apparelPriceDisplay");
+    apparelPriceDisplay.textContent = "Apparel Estimate: $" + formattedTotalApparelPrice;
 };
