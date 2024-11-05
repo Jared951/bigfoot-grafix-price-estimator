@@ -93,4 +93,6 @@ function calculateSignPrice() {
     const signPriceDisplay = document.getElementById("signPriceDisplay");
     // Access the text content of the signPriceDisplay element and then show the content on the HTML
     signPriceDisplay.textContent = "Sign Estimate: $" + formattedTotalSignPrice;
+
+    console.log(signPriceDisplay)
 };

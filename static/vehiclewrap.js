@@ -180,6 +180,11 @@ function calculateEstimate() {
         return;
     }
 
+    if (selectedWrapSize !== "select" || selectedMaterial === "select" || selectedCarMake !== "select" || selectedCarModel === "select") {
+        alert("Please select a Car Model and Wrap Material");
+        return;
+    }
+   
     let squareFootage = 0;
     
     if (selectedWrapSize === "full"){
