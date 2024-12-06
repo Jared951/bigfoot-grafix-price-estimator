@@ -72,10 +72,6 @@ def home():
 def sign():
     return render_template('sign.html')
 
-@app.route('/profile')
-def profile():
-    return render_template('profile.html')
-
 @app.route('/banner')
 def banner():
     return render_template('banner.html')

@@ -179,11 +179,6 @@ function calculateEstimate() {
         alert("Please select a Car Make, Car Model, Wrap Material, and Wrap Size");
         return;
     }
-
-    if (selectedWrapSize !== "select" || selectedMaterial === "select" || selectedCarMake !== "select" || selectedCarModel === "select") {
-        alert("Please select a Car Model and Wrap Material");
-        return;
-    }
    
     let squareFootage = 0;
     
